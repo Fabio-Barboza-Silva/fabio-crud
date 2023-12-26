@@ -2,9 +2,9 @@
   "name": "fabiocrud",
   "version": "1.0.0",
   "description": "InitialCrud",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fabio",
