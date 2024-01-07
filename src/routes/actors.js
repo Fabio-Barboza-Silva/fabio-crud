@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const querys = require('../querys');
+const querys = require('../querys/querysActors');
 
 const router = Router();
 

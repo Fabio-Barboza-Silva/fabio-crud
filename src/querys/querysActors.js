@@ -1,4 +1,4 @@
-const connection = require('./connection');
+const connection = require('../connection');
 
 const getAllActors = async () => {
     const [query] = await connection.execute('SELECT * FROM sakila.actor');
@@ -18,14 +18,17 @@ const createActor = async(first_name, last_name) => {
     return item;
 }
 
-const updateActor = async(id, first_name, last_name) => {
+const updateActor = async(id, first_name, 
+    last_name) => {
     const item = await getActorsById(id);
     if(item.length === 0 ){
         return null;
     }
-    const [query] = await connection.execute(`UPDATE sakila.actor 
+    const [query] = await connection.
+    execute(`UPDATE sakila.actor 
         SET first_name = ?, last_name = ?
-        WHERE actor_id = ?;`, [first_name, last_name, id]);   
+        WHERE actor_id = ?;`, [first_name, 
+            last_name, id]);   
     return query;
 }
 
