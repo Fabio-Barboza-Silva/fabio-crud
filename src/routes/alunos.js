@@ -24,9 +24,9 @@ router.put('/', async (req, res) => {
     const { id, nome, idade } = req.body;
     const query = await querys.updateAluno(id, nome, idade);
     if(query == null){
-        return res.status(400).json({messge: 'Aluno not found'});        
+        return res.status(400).json({ message: 'Aluno not found' });        
     }
-    return res.status(200).json({Message: 'Aluno registered sucessfully'});
+    return res.status(200).json({ message: 'Aluno registered sucessfully' });
 })
 
 //deleta aluno
