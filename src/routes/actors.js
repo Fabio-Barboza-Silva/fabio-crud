@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const query = await querys.getActorsById(id);
-    if(query.length === 0){
-        return res.status(400).json({ message: 'actor not found'});
+    if (query.length === 0) {
+        return res.status(400).json({ message: 'actor not found' });
     }
     return res.status(200).json(query);
 });
@@ -24,9 +24,9 @@ router.get('/:id', async (req, res) => {
 //Adicionar ator
 
 router.post('/', async (req, res) => {
-    const { first_name, last_name} = req.body;
+    const { first_name, last_name } = req.body;
     const query = await querys.createActor(first_name, last_name);
-    return res.status(200).json(query);
+    return res.status(201).json(query);
 });
 
 //atualizar ator
@@ -34,19 +34,19 @@ router.post('/', async (req, res) => {
 router.put('/', async (req, res) => {
     const { id, first_name, last_name } = req.body;
     const query = await querys.updateActor(id, first_name, last_name);
-    if(query === null){
-        return res.status(400).json({ message: 'actor not found'});
+    if (query === null) {
+        return res.status(400).json({ message: 'actor not found' });
     }
-    return res.status(200).json({message: 'actor regitered successfully'});
+    return res.status(200).json({ message: 'actor regitered successfully' });
 });
 
 router.delete('/', async (req, res) => {
     const { id } = req.body;
     const query = await querys.deleteActor(id);
-    if(query === null){
-        return res.status(400).json({ message: 'actor not found'});
+    if (query === null) {
+        return res.status(400).json({ message: 'actor not found' });
     }
-    return res.status(200).json({message: 'actor deleted successfully'});
+    return res.status(200).json({ message: 'actor deleted successfully' });
 });
 
 module.exports = router;
