@@ -1,5 +1,4 @@
 const connection = require('../connection');
-const { getActorsById } = require('./querysActors');
 
 const getAllClientes = async () => {
     const [query] = await connection.execute(`SELECT * FROM sakila.cliente`);

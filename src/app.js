@@ -3,6 +3,7 @@ const actors = require('./routes/actors');
 const alunos = require('./routes/alunos');
 const vizinhos = require('./routes/vizinhos');
 const clientes = require('./routes/clientes')
+const usuarios = require('./routes/usuarios')
 
 
 const app = express();
@@ -15,6 +16,7 @@ app.use('/actors', actors);
 app.use('/alunos', alunos);
 app.use('/vizinhos', vizinhos);
 app.use('/clientes', clientes);
+app.use('/usuarios', usuarios);
 
 
 app.listen(PORT, () => {

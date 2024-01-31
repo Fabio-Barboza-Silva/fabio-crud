@@ -30,7 +30,9 @@ const deleteVizinho = async (id) => {
     if (item.length == 0) {
         return null;
     }
-    const [query] = await connection.execute(`DELETE FROM sakila.vizinho WHERE vizinho_id = ?;`, [id]);
+    const [query] = await connection.
+    execute(`DELETE FROM 
+    sakila.vizinho WHERE vizinho_id = ?;`, [id]);
     return query;
 }
 

@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { nome, idade } = req.body;
     const query = await querys.createAluno(nome, idade);
-    return res.status(200).json(query);
+    return res.status(201).json(query);
 })
 
 //atualizar aluno

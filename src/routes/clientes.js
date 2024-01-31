@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     const {nome, idade, cidade } = req.body;
     const query = await querys.createCliente(nome, idade, cidade);
-    return res.status(200).json(query);
+    return res.status(201).json(query);
 });
 
 //atualiza cliente
